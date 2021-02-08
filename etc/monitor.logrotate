@@ -1,0 +1,10 @@
+# sample logrotate configuration file
+       compress
+
+       $HOME/log/monitor.log {
+           rotate 7
+           daily
+           postrotate
+               $HOME/bin/monitor.sh restart
+           endscript
+       }
